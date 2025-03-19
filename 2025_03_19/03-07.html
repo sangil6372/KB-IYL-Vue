@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 문자가 아니라 숫자로 가지고 싶음 -->
+        <input type="text" v-model.number="num">
+        입력된 수 : <span>{{num}}</span>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const vm = Vue.createApp({
+            name: 'App',
+            data() {
+                return {
+                    num: 0
+                };
+            },
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
