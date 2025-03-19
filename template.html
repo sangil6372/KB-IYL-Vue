@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 이 부분은 vue 로 담당 <- 분리할 순 있는데 굳이 분리하진 않음 -->
+    <div id="app">
+        <h2>{{message}}</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <!--  아래가 순수 데이터만 갖는 모델 -->
+    <script>
+        let model = { message: "Hello Vue3!" };
+        let vm = Vue.createApp({  // <- 이 객체를 ViewModel 이라고함 /= 설정 객체 
+            name: "App", 
+            // 데이터 옵션
+            // return 되는 객체의 데이터 변경 시 화면 변경
+            // proxy 객체가 제어 
+            data() {
+                return model;
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
