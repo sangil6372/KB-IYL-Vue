@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 한글 입력을 받을 때 입력 자모를 바로바로 반영하도록 -->
+        <input type="text" :value="name" @input="(e)=>{this.name = e.target.value}" />
+        <!-- <input type="text" v-model="name" /> -->
+
+        <br />
+        이름: <span>{{name}}</span>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const vm = Vue.createApp({
+            name: 'App',
+            data() {
+                return {
+                    name: ""
+                };
+            },
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
