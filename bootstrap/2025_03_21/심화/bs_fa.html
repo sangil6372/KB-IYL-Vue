@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>BootStrap Ex</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            margin: 30px;
+        }
+
+        .navbar {
+            background-color: rgb(6, 147, 202);
+            color: white;
+        }
+
+        .nav-link {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mt-3 p-5 text-white rounded" style="background-image: url('./space.jpg');">
+            <h1>Fullstack Study</h1>
+            <p>Vue + 자바 기반의 풀스택 기술을 배웁니다.</p>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- 로고/브랜드 -->
+                <a class="navbar-brand" style="color:aliceblue" href="#"><i class="fa-solid fa-house"></i> FullStack</a>
+
+                <!-- 햄버거 메뉴 (모바일용) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- 접히는 메뉴 -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- 왼쪽 메뉴 -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">메뉴1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">메뉴2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">메뉴3</a>
+                        </li>
+                    </ul>
+
+                    <!-- 오른쪽: 프로필 이미지 + admin + 로그아웃 -->
+                    <div class="d-flex align-items-center">
+                        <img src="./bear.jpg" alt="프로필" class="rounded-circle" style="width: 40px; height: 40px;">
+                        <a class="nav-link ms-2" href="#">admin</a>
+                        <a class="nav-link ms-3" href="#">로그아웃</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+        <h2><i class="fa-solid fa-list"></i> 글 목록</h1>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col" style="width: 5%;">No</th>
+                        <th scope="col" style="width: 50%;">제목</th>
+                        <th scope="col" style="width: 20%;">작성자</th>
+                        <th scope="col" style="width: 25%;">등록일</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><a href="">글 제목 1</a></td>
+                        <td>user01</td>
+                        <td>2024-04-17</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td><a href="">글 제목 2</a></td>
+                        <td>user01</td>
+                        <td>2024-04-17</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td><a href="">글 제목 3</a></td>
+                        <td>user01</td>
+                        <td>2024-04-17</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td><a href="">글 제목 4</a></td>
+                        <td>user01</td>
+                        <td>2024-04-17</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td><a href="">글 제목 5</a></td>
+                        <td>user01</td>
+                        <td>2024-04-17</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <br>
+            <div class="position-relative mt-3">
+                <!-- 가운데 고정된 페이지네이션 -->
+                <nav aria-label="Page navigation example" class="position-absolute top-50 start-50 translate-middle">
+                    <ul class="pagination mb-0">
+                        <!-- 맨 처음으로 이동 -->
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="First">
+                                <span aria-hidden="true"><i class="fa-solid fa-backward"></i></span> <!-- ⏮ -->
+                            </a>
+                        </li>
+
+                        <!-- 이전 페이지 -->
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&#9664;</span> <!-- ◀ -->
+                            </a>
+                        </li>
+
+                        <!-- 페이지 번호 -->
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link" href="#">7</a></li>
+                        <li class="page-item"><a class="page-link" href="#">8</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">9</a></li> <!-- 현재 페이지 -->
+                        <li class="page-item"><a class="page-link" href="#">10</a></li>
+
+                        <!-- 다음 페이지 -->
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&#9654;</span> <!-- ▶ -->
+                            </a>
+                        </li>
+
+                        <!-- 마지막 페이지로 이동 -->
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Last">
+                                <span aria-hidden="true"><i class="fa-solid fa-forward"></i></span> <!-- ⏭ -->
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+
+                <!-- 오른쪽 상단에 붙는 버튼 -->
+                <button class="btn btn-primary position-absolute top-0 end-0"><i
+                        class="fa-solid fa-pen-to-square"></i>글쓰기</button>
+
+            </div>
+            <footer class=" text-center text-lg-start mt-5">
+                <div class="text-center p-3 text-muted">
+                    © 2025.03 created by KB IYL 6기 전공12회차
+                </div>
+            </footer>
+
+
+    </div>
+</body>
+
+</html>
