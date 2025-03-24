@@ -54,21 +54,33 @@
                         </div>
                     </div>
                 </div>
-                <span class="me-5">전체 todo 개수 : {{ todolist.length }}</span>
-                <span class="me-5">완료 todo 개수 : {{ cntCompleted }}</span>
-                <span>미완료 todo 개수 : {{ todolist.length - cntCompleted }}</span>
+                <div class="row text-center">
+                    <div class="col-4 mb-2">
+                        <span>전체 todo 개수 : {{ todolist.length }}</span>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <span>완료 todo 개수 : <span class="text-success fw-bold">{{ cntCompleted }}</span></span>
+                    </div>
+                    <div class="col-4 mb-2">
+                        <span>미완료 todo 개수 : <span class="text-danger fw-bold">{{ todolist.length - cntCompleted
+                                }}</span></span>
+                    </div>
+                </div>
+
 
                 <div class="row">
                     <div class="col">
                         <ul class="list-group">
-                            <li v-for="todoitem in todolist" :key="todoitem.id" class="list-group-item"
-                                :class="{ 'list-group-item-success': todoitem.completed } "
-                                @click="toggleCompleted(todoitem.id)">
-                                <span class="pointer" :class="{ 'todo-done': todoitem.completed }">
+                            <li v-for="todoitem in sortedTodoList" :key="todoitem.id" class="list-group-item"
+                                :class="{ 'list-group-item-success': todoitem.completed } ">
+                                <input type="checkbox" v-model="todoitem.completed" class="pointer me-2"
+                                    @click.stop="toggleCompleted(todoitem.id)">
+                                <span :class="{ 'todo-done': todoitem.completed }">
                                     {{todoitem.todo}} {{ todoitem.completed ? "(완료)" : "" }}
                                 </span>
-                                <span class="float-end badge bg-secondary pointer"
-                                    @click.stop="deleteTodo(todoitem.id)">삭제</span>
+                                <span class="float-end badge bg-secondary pointer" :style="deleteStyle"
+                                    @click.stop="deleteTodo(todoitem.id)"
+                                    @mouseover="deleteStyle.backgroundColor = 'red'">삭제</span>
 
                             </li>
                         </ul>
@@ -98,6 +110,9 @@
                         { id: ts + 2, todo: "일요일 애견 카페", completed: false },
                         { id: ts + 3, todo: "Vue 원고 집필", completed: false },
                     ],
+                    deleteStyle: {
+                        backgroundColor: 'red'
+                    },
                     completedNum: 0
                 };
             },
@@ -108,6 +123,14 @@
                         if (item.completed) cnt++;
                     }
                     return cnt;
+                },
+                sortedTodoList() {
+                    return this.todolist.slice().sort((a, b) => {
+                        if (a.completed !== b.completed) {
+                            return a.completed - b.completed; // 미완료 먼저
+                        }
+                        return a.todo.localeCompare(b.todo); // 문자열 사전 순
+                    });
                 }
             }
             ,
