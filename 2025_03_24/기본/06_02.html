@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Button Hover</title>
+</head>
+
+<body>
+    <div id="app">
+        <button :style="style1" 
+        @mouseover.stop="overEvent" 
+        @mouseout.stop="outEvent">
+            테스트
+        </button>
+        <!-- 마우스 hover 이벤트 시 메서드 실행  -->
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const vm = Vue.createApp({
+            name: 'App',
+            data() {
+                return {
+                    //  속성 객체 형식 
+                    style1: {
+                        backgroundColor: "aqua",
+                        color: "black",
+                    },
+                };
+            },
+            methods: {
+                overEvent() {
+                    this.style1.backgroundColor = "purple";
+                    this.style1.color = "yellow";
+                },
+                outEvent() {
+                    this.style1.backgroundColor = "aqua";
+                    this.style1.color = "black";
+                },
+            },
+        }).mount('#app');
+    </script>
+</body>
+
+</html>

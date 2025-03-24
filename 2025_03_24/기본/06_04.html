@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- style 성격상 분리가 필요할 때 배열로 배정 -->
+        <button :style="[myColor,myLayout]">테스트</button>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const vm = Vue.createApp({
+            name: 'App',
+            data() {
+                return {
+                    myColor: {
+                        backgroundColor: 'purple',
+                        color: 'yellow',
+                    },
+                    myLayout: {
+                        width: '150px',
+                        height: '80px',
+                        textAlign: 'center',
+                    },
+                };
+            },
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
