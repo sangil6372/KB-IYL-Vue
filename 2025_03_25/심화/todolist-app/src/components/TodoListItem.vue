@@ -23,7 +23,8 @@
                   -->
     <span
       class="float-end badge bg-secondary pointer"
-      @click.stop="$emit('delete-todo', todoitem.id)"
+      @click.stop="$emit('delete-todo', hj
+      .id)"
       >삭제</span
     >
   </li>
