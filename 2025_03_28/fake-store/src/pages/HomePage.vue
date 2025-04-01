@@ -1,5 +1,7 @@
 <template>
-  <h1>HomePage</h1>
+  <div>
+    <h2>첫 페이지</h2>
+  </div>
 </template>
 
 <script>

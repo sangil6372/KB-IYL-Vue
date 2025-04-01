@@ -1,18 +1,11 @@
 <template>
   <div class="container">
-    <Header/>
-    <router-view></router-view>
-    <footer/>
+    <DefaultLayout />
   </div>
 </template>
 
-<script>
-import Header from "@/components/layouts/Header.vue";
-import Footer from "@/components/layouts/Footer.vue";
+<script setup>
+import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
 
-export default {
-  components: {
-    Header,
-  },
-};
+
 </script>

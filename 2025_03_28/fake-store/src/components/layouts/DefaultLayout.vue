@@ -1,12 +1,12 @@
 <template>
   <div>
     <Header />
-    <div class="d-flex">
-      <NavBar class="me-4" />
-      <main class="flex-grow-1">
-        <router-view />
-      </main>
-    </div>
+    <NavBar />
+
+    <main class="container my-5">
+      <router-view />
+    </main>
+
     <Footer />
   </div>
 </template>
